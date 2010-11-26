@@ -87,8 +87,8 @@ module IsParanoid
 
         protected
 
-          def set_deleted_at(value)
-            self.class.update_all({:deleted_at => value}, {:id => self.id})
+          def set_deleted_at(value)            
+            self.class.unscoped.update_all({:deleted_at => value}, {:id => self.id})
             self.deleted_at = value
           end
       end

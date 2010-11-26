@@ -106,6 +106,7 @@ describe Android do
 
   it "should allow restoring" do
     @r2d2.destroy
+       
     lambda{
       @r2d2.restore
     }.should change(Android, :count).by(1)
